@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tiendaproductos.controller.MainController">
+    <padding>
+        <Insets bottom="15" left="100" right="20" top="30" />
+    </padding>
+
+    <Label text="Inventario productos" />
+    <HBox spacing="5">
+        <TextField fx:id="txtBusqueda" prefHeight="29.0" prefWidth="207.0" promptText="Buscar Producto" />
+        <Button text="🔍" />
+    </HBox>
+    <TableView fx:id="tablaProductos" prefHeight="200" prefWidth="500">
+        <columns>
+            <TableColumn fx:id="colCodigo" text="Código"/>
+            <TableColumn fx:id="colNombre" text="Nombre"/>
+            <TableColumn fx:id="colPrecio" text="Precio"/>
+            <TableColumn fx:id="colStock" text="Stock"/>
+            <TableColumn fx:id="colCategoria" text="Categoría"/>
+        </columns>
+    </TableView>
+
+
+    <HBox spacing="10">
+        <Button onAction="#onNuevo" text="Nuevo" />
+        <Button onAction="#onEditar" text="Editar" />
+        <Button onAction="#onEliminar" text="Eliminar" />
+        <Button onAction="#onRecargar" text="Recargar" />
+        <Button onAction="#onGuardar" text="Guardar" />
+    </HBox>
+
+    <Label fx:id="welcomeText" />
+</VBox>
