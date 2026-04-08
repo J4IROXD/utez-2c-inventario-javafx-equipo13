@@ -16,17 +16,18 @@ public class ProductoService {
 
         for (int i = 1; i < lines.size(); i++) {
             String line = lines.get(i);
-            if (line == null || line.isBlank()) continue;
-
+            if (line == null || line.isBlank())
+                continue;
             String[] parts = line.split(",");
-            if (parts.length < 5) continue;
+            if (parts.length < 5)
+                continue;
             try {
                 result.add(new Producto(
                         parts[0].trim(),
                         parts[1].trim(),
                         Double.parseDouble(parts[2].trim()),
                         Integer.parseInt(parts[3].trim()),
-                        parts[5].trim()));
+                        parts[4].trim()));
             } catch (NumberFormatException e) {
                 System.err.println("Error de formato de línea" + (i + 1) + ":" + line);
             }
